@@ -85,10 +85,8 @@ EDC Monitoring is a web-based ISP monitoring system that tracks the online/offli
    Or deploy to Apache/Nginx pointing to the project directory.
 
 5. **Login**
-   
-   Navigate to `http://localhost:8000` and log in with:
-   - **Username:** `admin`
-   - **Password:** `admin123`
+    
+   Navigate to `http://localhost:8000` and log in with the admin credentials you created.
 
 6. **Configure MikroTik**
    
@@ -176,8 +174,7 @@ edc-monitoring/
 
 ## Security Notes
 
-- ⚠️ Delete `install.php` after initial setup
-- ⚠️ Change the default admin password immediately
+- ⚠️ Change the default admin password immediately after first login
 - ⚠️ MikroTik API password is stored in plaintext in the database — use a dedicated read-only API user
 - ⚠️ For production, add HTTPS and consider API-SSL (port 8729)
 
@@ -198,7 +195,6 @@ MIT License — see [LICENSE](LICENSE) for details.
 ## Developer
 
 **K.K.M. Fahad Fouzdar [CHAION]**
-- 📞 8801711785635
 
 ---
 

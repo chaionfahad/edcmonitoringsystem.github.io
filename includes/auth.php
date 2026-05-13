@@ -2,6 +2,14 @@
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/lang.php';
 
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'domain' => '',
+    'secure' => isset($_SERVER['HTTPS']),
+    'httponly' => true,
+    'samesite' => 'Lax'
+]);
 session_start();
 
 function isLoggedIn() {
@@ -53,6 +61,7 @@ function login($username, $password) {
     $user = $db->fetch("SELECT * FROM users WHERE username = ? AND status = 1", [$username]);
 
     if ($user && password_verify($password, $user['password'])) {
+        session_regenerate_id(true);
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['full_name'] = $user['full_name'];

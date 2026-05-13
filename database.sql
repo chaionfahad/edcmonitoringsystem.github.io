@@ -61,13 +61,14 @@ CREATE TABLE `settings` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Insert default admin (password: admin123)
+-- Insert default admin (change this password after install!)
+-- Password hash below is for 'admin123' - generated with PHP password_hash()
 INSERT INTO `users` (`username`, `password`, `full_name`, `role`, `status`) VALUES
 ('admin', '$2y$10$gu78EQhAe7NslekYCKzHw.0K.8jX6QXWiiQ5AUIbo/74f5dEyMbwu', 'Administrator', 'admin', 1);
 
--- Insert default MikroTik settings placeholder
+-- Insert default MikroTik settings placeholder (update with your router credentials)
 INSERT INTO `settings` (`id`, `mt_ip`, `mt_api_port`, `mt_username`, `mt_password`) VALUES
-(1, '192.168.88.1', 8728, 'api_user', 'api_password');
+(1, '192.168.88.1', 8728, 'api_user', 'change_this_password');
 
 -- Add head_name and mobile columns for institutions
 ALTER TABLE `institutions` ADD COLUMN IF NOT EXISTS `head_name` varchar(200) DEFAULT NULL AFTER `name`;

@@ -10,7 +10,7 @@ function __($key) {
         'username' => ['en' => 'Username', 'bn' => 'ব্যবহারকারীর নাম'],
         'password' => ['en' => 'Password', 'bn' => 'পাসওয়ার্ড'],
         'login' => ['en' => 'Sign In', 'bn' => 'সাইন ইন'],
-        'default_creds' => ['en' => 'Default: admin / admin123', 'bn' => 'ডিফল্ট: admin / admin123'],
+        'default_creds' => ['en' => '', 'bn' => ''],
         'toggle_lang' => ['en' => 'বাংলা', 'bn' => 'English'],
     ];
     $currentLang = isset($_COOKIE['edc_lang']) && $_COOKIE['edc_lang'] === 'bn' ? 'bn' : 'en';
@@ -67,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $db->fetch("SELECT * FROM users WHERE username = ? AND status = 1", [$username]);
 
         if ($user && password_verify($password, $user['password'])) {
+            session_regenerate_id(true);
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['full_name'] = $user['full_name'];
@@ -415,14 +416,10 @@ $bg = $themeBg[currentTheme()];
         </form>
 
         <div class="dev-section">
-            <div class="dev-label">Developer</div>
+            <div class="dev-label">EDC Monitoring System</div>
             <div class="dev-row">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                <span>K.K.M. Fahad Fouzdar [ CHAION ]</span>
-            </div>
-            <div class="dev-row">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-                <span>8801711785635</span>
+                <span>ISP Monitoring System</span>
             </div>
         </div>
     </div>

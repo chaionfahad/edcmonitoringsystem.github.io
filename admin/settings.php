@@ -130,7 +130,7 @@ $settings = getMikrotikSettings();
 
         const API_TEST_URL = '<?= rtrim((isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['SCRIPT_NAME']))) ?>/api/test_mt.php';
 
-        fetch(API_TEST_URL + '?' + params.toString(), { credentials: 'same-origin' })
+        fetch(API_TEST_URL, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: params.toString(), credentials: 'same-origin' })
             .then(r => r.json())
             .then(data => {
                 showStatus(data.success, data.success

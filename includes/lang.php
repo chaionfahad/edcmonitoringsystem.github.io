@@ -94,7 +94,7 @@ $_lang_data['toggle_lang'] = ['en' => 'বাংলা', 'bn' => 'English'];
 // ── Login ──
 $_lang_data['invalid_credentials'] = ['en' => 'Invalid username or password.', 'bn' => 'ভুল ব্যবহারকারীর নাম বা পাসওয়ার্ড।'];
 $_lang_data['login_title'] = ['en' => 'Login', 'bn' => 'লগইন'];
-$_lang_data['default_creds'] = ['en' => 'Default Admin: admin / admin123', 'bn' => 'ডিফল্ট অ্যাডমিন: admin / admin123'];
+$_lang_data['default_creds'] = ['en' => '', 'bn' => ''];
 
 // ── Dashboard ──
 $_lang_data['admin_dashboard'] = ['en' => 'Admin Dashboard', 'bn' => 'অ্যাডমিন ড্যাশবোর্ড'];

@@ -16,10 +16,10 @@ if (empty($_SESSION['user_id'])) {
     exit;
 }
 
-$ip = $_GET['mt_ip'] ?? '';
-$port = (int)($_GET['mt_api_port'] ?? 8728);
-$user = $_GET['mt_username'] ?? '';
-$pass = $_GET['mt_password'] ?? '';
+$ip = $_POST['mt_ip'] ?? '';
+$port = (int)($_POST['mt_api_port'] ?? 8728);
+$user = $_POST['mt_username'] ?? '';
+$pass = $_POST['mt_password'] ?? '';
 
 if (!$ip || !$user) {
     echo json_encode(['success' => false, 'error' => 'IP and Username are required']);
