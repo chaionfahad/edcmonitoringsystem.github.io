@@ -56,7 +56,7 @@ EDC Monitoring is a web-based ISP monitoring system that tracks the online/offli
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/edc-monitoring.git
+   git clone https://github.com/chaionfahad/edcmonitoringsystem.github.io.git
    cd edc-monitoring
    ```
 
